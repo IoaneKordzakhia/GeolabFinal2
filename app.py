@@ -115,3 +115,9 @@ def logout():
 # Run the app
 if __name__ == '__main__':
     app.run()
+@app.route('/thankyou')
+def thankyou():
+    fullname = request.args.get('fullname')
+    email = request.args.get('email')
+    card = request.args.get('card')
+    return render_template('thankyou.html', fullname=fullname, email=email, card=card)
